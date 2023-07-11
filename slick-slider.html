@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css?v2022">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css?v2022">
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    html,* { font-family: 'Inter'; }
+body { background-color: #4B5563; line-height:1.6; color: #fff;}
+
+.container { margin: 50px auto; max-width: 1200px; }
+
+    .slider {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: 1;
+    }
+
+    .slick-active {
+      opacity: 1;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+
+    @media only screen and (max-width: 600px) {
+ .slick-prev{
+  z-index: 99;
+  left: 7px !important;
+ }
+ .slick-next{
+  z-index: 99;
+  right: 13px !important;
+ }
+}
+
+/* style for only modal style*/
+ /* CSS for modal popup */
+ .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(214, 214, 214, 0.986);
+    }
+
+
+
+    hr.solid {
+  border-top: 3px solid #0e0e0e;
+}
+#closemodal1{
+font-size: 50px;
+cursor: pointer;
+}
+#modalp1{
+  font-size: 18px;;
+}
+
+#title-modal1{
+  margin-top: 20px;
+  font-size: 25px;
+}
+@media only screen and (max-width: 600px) {
+
+  #title-modal1{
+  font-size: 20px;
+}
+}
+/* style end for modal style */
+
+/*  style for overlay  */
+.overlaycontainer {
+  position: relative;
+  carsor: pointer;
+
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
+
+.overlaycontainer:hover .overlay {
+  opacity: 0.8;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* end  style for overelay */
+  </style>
+</head>
+<body>
+  <div class="container">
+
+
+<h2>Basic</h2>
+  <section class="regular slider">
+    <div class="overlaycontainer">
+    <div onclick="openModal()">
+      <img src="https://concordrealestatebd.com/admin/uploads/page/national-monument-at-savar/405x454/1662291900xi6E2_m.jpg">
+      <div class="overlay">
+        <div class="text">
+          holow world
+        </div>
+      </div>
+    </div>
+    <!-- container end here  -->
+  </div>
+  <!--one section  -->
+
+
+
+    <div>
+      <img src="https://concordrealestatebd.com/admin/uploads/page/singtel-telecom-tower-in-singapore/405x454/16622920988f3XX_m.jpg">
+    </div>
+    <div>
+      <img src="https://concordrealestatebd.com/admin/uploads/page/hazrat-shahjalal-international-airport/405x454/166229218025TRn_m.jpg">
+    </div>
+    <div>
+      <img src="https://concordrealestatebd.com/admin/uploads/page/national-monument-at-savar/405x454/1662291900xi6E2_m.jpg">
+    </div>
+    <div>
+      <img src="https://concordrealestatebd.com/admin/uploads/page/national-monument-at-savar/405x454/1662291900xi6E2_m.jpg">
+    </div>
+    <div>
+      <img src="https://concordrealestatebd.com/admin/uploads/page/national-monument-at-savar/405x454/1662291900xi6E2_m.jpg">
+    </div>
+  </section>
+
+
+
+
+
+
+</div>
+
+    <!-- Modal Popup -->
+    <div class="container-fluid modal  " id="myModal" >
+
+      <div class="row">
+      <div class="col-10 ">
+        <h1 id="title-modal1">Lorem, ipsum dolor sitdam nemo ma corrupti, itaque blanditiis!</h1>
+      </div>
+
+    <div class="col-2" id="closemodal1" onclick="closeModal()">
+      &times;
+    </div>
+  </div>
+    <hr class="solid">
+    <!--content -->
+    <div class="row">
+      <div class="col-lg-4 justify-content-end">
+        <img src="https://concordrealestatebd.com/admin/uploads/page/national-monument-at-savar/405x454/1662291900xi6E2_m.jpg" alt="">
+      </div>
+      <div class="col-lg-8 justify-content-start">
+        <p id="modalp1">
+          Hazrat Shahjalal International Airport is the principal international airport
+          serving Bangladesh and its largest city, Dhaka. It is located in Kurmitola, 17 kilometers (11 mi)
+           from the city centre, in the northern part of Dhaka.  It was constructed by Concord in 1980.
+        </p>
+      </div>
+
+
+  </div>
+</div>
+
+<!-- modal section end here -->
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+  <script src="./slick/slick.js?v2022" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+
+      $(".regular").slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+
+
+
+      });
+
+
+
+    });
+</script>
+
+<script>
+  // JavaScript functions for modal popup
+  function openModal() {
+    var modal = document.getElementById("myModal");
+    var modalImage = document.getElementById("modalImage");
+
+    modal.style.display = "block";
+    modalImage.src = imageUrl;
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+  // JavaScript functions for modal popup
+</script>
+
+</body>
+</html>
